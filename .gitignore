@@ -1,0 +1,18 @@
+# Node
+node_modules/
+
+# Java build
+build/
+target/
+
+# Eclipse
+.metadata/
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+
+# Environment files
+.env
