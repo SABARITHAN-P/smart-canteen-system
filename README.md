@@ -1,55 +1,132 @@
 # 🍽️ Smart Canteen Management System
 
 A **full-stack web application** designed to modernize campus canteen operations by enabling digital food ordering and efficient shop management.
-The system allows users to browse canteen shops, view menus, place orders, and track order status in real time.
 
-The platform includes **role-based dashboards** for Users, Shop Admins, and the Main Admin to manage different aspects of the system.
+The platform allows students to browse canteen shops, explore menus, place food orders, and track order status in real time.
+It also provides **dedicated management dashboards** for shop administrators and system administrators to manage menus, orders, and platform operations.
+
+The system follows a **role-based architecture** with three primary roles:
+
+* **Users (Students / Customers)** – place and manage food orders
+* **Shop Admins** – manage shop menus and process orders
+* **System Admin** – manage shops, users, and overall system operations
 
 ---
 
 # ⭐ Key Highlights
 
-- Full-stack application with React frontend and Java Servlets backend
-- Role-based dashboards (User, Shop Admin, Main Admin)
-- REST API based communication between frontend and backend
-- Structured relational database with foreign key relationships
-- Modular backend architecture using DAO and model layers
+* Full-stack web application using **React + Java Servlets**
+* Role-based dashboards for **Users, Shop Admins, and System Admin**
+* Secure authentication with **email-based password recovery (OTP)**
+* REST API communication between frontend and backend
+* Modular backend architecture using **DAO, Models, and Controllers**
+* Structured relational database with **foreign key constraints**
+* Issue reporting system for food or platform related problems
 
---- 
+---
 
 # 🚀 Features
 
-## 👤 User
+## 👤 User (Students / Customers)
+
+Users interact with the system to browse shops and place food orders.
+
+### Account Management
+
+* Register and login securely
+* Reset password using OTP sent via email
+* Update personal profile information
+* Change account password
+* Secure logout
+
+### Shop & Menu Interaction
 
 * Browse available canteen shops
-* View menu items and prices
+* View shop menus and food items
+* View item details and pricing
+
+### Cart & Ordering
+
+* Add items to cart
+* Modify cart item quantities
+* Remove items from cart
 * Place food orders
-* Track order status
-* View order history
-* Update profile and password
-* Report issues or feedback
+* Complete payment
+
+### Order Management
+
+* Track real-time order status
+* View past order history
+* Cancel orders before preparation begins
+
+### Issue Reporting
+
+Users can report problems related to:
+
+* Food quality
+* Order issues
+* System problems
+
+---
 
 ## 🏪 Shop Admin
 
-* Manage shop menu (add, update, delete items)
-* View and manage incoming orders
-* Toggle shop availability (Open / Closed)
-* View dashboard statistics
-* Manage shop profile
+Each shop in the canteen has a **Shop Admin** responsible for managing shop operations.
 
-## 🛠️ Main Admin
+### Menu Management
 
-* Manage all shops
-* Manage shop admins
-* Manage system users
-* View all orders
-* Monitor system reports
+* Add new menu items
+* Update menu items
+* Remove menu items
+* Toggle menu item availability
+
+### Shop Management
+
+* Enable or disable shop availability (Open / Closed)
+* Update shop profile details
+
+### Order Management
+
+* View incoming orders
+* Monitor order details
+* Update order preparation status
+
+### Account Management
+
+* Change shop admin password
+
+---
+
+## 🛠️ System Admin
+
+The **Main Admin** manages the entire SmartCanteen platform.
+
+### Shop Management
+
+* Create new shop owner accounts
+* Register new shops
+* Manage shop administrators
+
+### User Management
+
+* Block or unblock users
+* Block or unblock shop owners
+
+### Platform Monitoring
+
+* View all platform orders
+* Monitor system activity
+
+### Report Management
+
+* View user-submitted reports
+* Investigate and manage complaints
 
 ---
 
 # 🏗️ System Architecture
 
-Frontend and backend are separated to maintain a **scalable full-stack architecture**.
+The SmartCanteen system follows a **separated full-stack architecture** where the frontend communicates with the backend through REST APIs.
 
 ```
 React Frontend
@@ -63,30 +140,33 @@ Java Servlets Backend
 MySQL Database
 ```
 
+This architecture ensures **scalability, modularity, and maintainability** of the system.
+
 ---
 
 # 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
 * React.js
-* JavaScript
-* HTML
-* CSS
+* JavaScript (ES6+)
+* HTML5
+* CSS3
 * Framer Motion
 * React Icons
+* Vite
 
-### Backend
+## Backend
 
 * Java Servlets
 * REST APIs
 * JDBC
 
-### Database
+## Database
 
 * MySQL
 
-### Tools
+## Tools
 
 * Postman (API testing)
 * Git & GitHub (version control)
@@ -95,7 +175,7 @@ MySQL Database
 
 # 🗄️ Database Design
 
-The system uses a **relational database design** with the following core tables:
+The system uses a **relational database schema** with the following core tables:
 
 * `users`
 * `shops`
@@ -106,7 +186,7 @@ The system uses a **relational database design** with the following core tables:
 * `reports`
 * `password_resets`
 
-Relationships are maintained using **foreign keys and constraints** to ensure data integrity.
+Relationships between tables are maintained using **foreign keys and constraints** to ensure data integrity and consistent data management.
 
 ---
 
@@ -116,18 +196,22 @@ Relationships are maintained using **foreign keys and constraints** to ensure da
 smart-canteen-system
 │
 ├── frontend/
-│   └── smartcanteen-ui/       # React application
+│   └── smartcanteen-ui/        # React + Vite frontend
 │
 ├── backend/
-│   └── smartcanteen/          # Java Servlets + REST APIs
+│   └── smartcanteen/           # Java Servlets backend
 │
 ├── database/
-│   └── schema.sql             # MySQL schema
+│   └── schema.sql              # MySQL database schema
 │
-├── screenshots/               # UI screenshots
+├── screenshots/
+│   ├── user/
+│   ├── shop-admin/
+│   └── admin/
 │
 └── README.md
 ```
+
 ---
 
 # ⚙️ Setup Instructions
@@ -142,7 +226,7 @@ git clone https://github.com/YOUR_USERNAME/smart-canteen-system.git
 
 ## 2️⃣ Setup Database
 
-Create a MySQL database and import the schema.
+Create a MySQL database and import the schema:
 
 ```
 source database/schema.sql;
@@ -152,7 +236,9 @@ source database/schema.sql;
 
 ## 3️⃣ Run Backend
 
-Deploy the Java backend on a servlet container such as **Apache Tomcat**.
+Deploy the Java backend using a servlet container such as **Apache Tomcat**.
+
+Ensure the database credentials are correctly configured before starting the server.
 
 ---
 
@@ -162,28 +248,60 @@ Navigate to the frontend folder and install dependencies:
 
 ```
 npm install
-npm start
+npm run dev
 ```
 
-The React application will start on:
+The application will start on:
 
 ```
-http://localhost:3000
+http://localhost:5173
 ```
 
 ---
 
-# 📸 Screenshots
+# 📸 Application Screenshots
 
-Add application screenshots here to demonstrate the UI.
+The following screenshots demonstrate the key interfaces and workflows of the SmartCanteen system across different user roles.
 
-Example:
+---
 
-* User Dashboard
-* Shop Admin Dashboard
-* Main Admin Dashboard
-* Menu Management
-* Order Tracking
+## 👤 User Interface
+
+Users can browse shops, view menus, manage cart items, and place orders.
+
+![User Login](screenshots/user/login.png)
+
+![Shop Selection](screenshots/user/shop-selection.png)
+
+![Menu Page](screenshots/user/menu.png)
+
+![Cart](screenshots/user/cart.png)
+
+![Order Status](screenshots/user/order-status.png)
+
+---
+
+## 🏪 Shop Admin Dashboard
+
+Shop administrators manage menus and handle incoming customer orders.
+
+![Shop Dashboard](screenshots/shop-admin/dashboard.png)
+
+![Add Menu Item](screenshots/shop-admin/add-menu.png)
+
+![Manage Orders](screenshots/shop-admin/view-orders.png)
+
+---
+
+## ⚙️ System Admin Panel
+
+The system administrator manages shops, users, and reports across the platform.
+
+![Admin Dashboard](screenshots/admin/dashboard.png)
+
+![Manage Users](screenshots/admin/manage-users.png)
+
+![View Reports](screenshots/admin/view-reports.png)
 
 ---
 
@@ -192,12 +310,13 @@ Example:
 * Simplify campus food ordering
 * Reduce waiting time in canteens
 * Improve shop management efficiency
-* Provide a structured admin control system
+* Provide centralized administrative control
 
 ---
+
 # 👨‍💻 Author
 
 **Sabarithan P**
 
-Computer Science Engineering Undergraduate  
-Full Stack Development Enthusiast
+Computer Science Engineering Undergraduate
+Full-Stack Development Enthusiast
