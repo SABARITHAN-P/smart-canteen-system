@@ -269,15 +269,15 @@ The following screenshots demonstrate the key interfaces and workflows of the Sm
 
 Users can browse shops, view menus, manage cart items, and place orders.
 
-![User Login](screenshots/user/login.png)
+![User Login](screenshots/user/1.Login.png)
 
-![Shop Selection](screenshots/user/shop-selection.png)
+![Shop Selection](screenshots/user/7.Shop_Selection.png)
 
-![Menu Page](screenshots/user/menu.png)
+![Menu Page](screenshots/user/8.Menu_Selection.png)
 
-![Cart](screenshots/user/cart.png)
+![Cart](screenshots/user/9.Cart.png)
 
-![Order Status](screenshots/user/order-status.png)
+![Order Status](screenshots/user/11.Orders.png)
 
 ---
 
@@ -285,11 +285,11 @@ Users can browse shops, view menus, manage cart items, and place orders.
 
 Shop administrators manage menus and handle incoming customer orders.
 
-![Shop Dashboard](screenshots/shop-admin/dashboard.png)
+![Shop Dashboard](screenshots/shop-admin/1/Dashboard.png)
 
-![Add Menu Item](screenshots/shop-admin/add-menu.png)
+![Add Menu Item](screenshots/shop-admin/2.Manage_Menu.png)
 
-![Manage Orders](screenshots/shop-admin/view-orders.png)
+![Manage Orders](screenshots/shop-admin/3.Manage_Orders.png)
 
 ---
 
@@ -297,11 +297,11 @@ Shop administrators manage menus and handle incoming customer orders.
 
 The system administrator manages shops, users, and reports across the platform.
 
-![Admin Dashboard](screenshots/admin/dashboard.png)
+![Admin Dashboard](screenshots/admin/1.Dashboard.png)
 
-![Manage Users](screenshots/admin/manage-users.png)
+![Manage Users](screenshots/admin/7.Manage-Users.png)
 
-![View Reports](screenshots/admin/view-reports.png)
+![View Reports](screenshots/admin/8.Manage-Reports.png)
 
 ---
 
