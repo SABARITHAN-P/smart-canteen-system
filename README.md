@@ -285,7 +285,7 @@ Users can browse shops, view menus, manage cart items, and place orders.
 
 Shop administrators manage menus and handle incoming customer orders.
 
-![Shop Dashboard](screenshots/shop-admin/1/Dashboard.png)
+![Shop Dashboard](screenshots/shop-admin/1.Dashboard.png)
 
 ![Add Menu Item](screenshots/shop-admin/2.Manage_Menu.png)
 
@@ -299,9 +299,9 @@ The system administrator manages shops, users, and reports across the platform.
 
 ![Admin Dashboard](screenshots/admin/1.Dashboard.png)
 
-![Manage Users](screenshots/admin/7.Manage-Users.png)
+![Manage Users](screenshots/admin/7.Manage_Users.png)
 
-![View Reports](screenshots/admin/8.Manage-Reports.png)
+![View Reports](screenshots/admin/8.Manage_Reports.png)
 
 ---
 
