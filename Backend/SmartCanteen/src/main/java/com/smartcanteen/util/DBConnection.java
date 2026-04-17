@@ -15,11 +15,12 @@ public class DBConnection {
 	}
 
 	public static Connection getConnection() {
-		try {
-			return DriverManager.getConnection(URL, USER, PASSWORD);
-		} catch (SQLException e) {
-    e.printStackTrace();  
-    throw new RuntimeException("Database connection failed", e);
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver"); 
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    } catch (Exception e) {
+        e.printStackTrace();
+        throw new RuntimeException("Database connection failed", e);
+    }
 }
 	}
-}
