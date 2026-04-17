@@ -18,7 +18,8 @@ public class DBConnection {
 		try {
 			return DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (SQLException e) {
-			throw new RuntimeException("Database connection failed", e);
-		}
+    e.printStackTrace();  
+    throw new RuntimeException("Database connection failed", e);
+}
 	}
 }
