@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-	private static final String URL = "jdbc:mysql://localhost:3306/smartcanteen";
+	private static final String URL = "jdbc:mysql://nozomi.proxy.rlwy.net:55084/smartcanteen?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 	private static final String USER = "root";
-	private static final String PASSWORD = "sabari2005";
+	private static final String PASSWORD = "BOclAIOOQxZwiixVRXpLcdmHgCNhysgr";
 
 	private DBConnection() {
 		// prevent instantiation
