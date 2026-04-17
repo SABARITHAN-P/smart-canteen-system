@@ -1,5 +1,11 @@
 # 🍽️ Smart Canteen Management System
 
+# 🌐 Live Demo
+
+https://smart-canteen-system-phi.vercel.app
+
+---
+
 A **full-stack web application** designed to modernize campus canteen operations by enabling digital food ordering and efficient shop management.
 
 The platform allows students to browse canteen shops, explore menus, place food orders, and track order status in real time.
@@ -7,21 +13,42 @@ It also provides **dedicated management dashboards** for shop administrators and
 
 The system follows a **role-based architecture** with three primary roles:
 
-* **Users (Students / Customers)** – place and manage food orders
-* **Shop Admins** – manage shop menus and process orders
-* **System Admin** – manage shops, users, and overall system operations
+- **Users (Students / Customers)** – place and manage food orders
+- **Shop Admins** – manage shop menus and process orders
+- **System Admin** – manage shops, users, and overall system operations
 
 ---
 
 # ⭐ Key Highlights
 
-* Full-stack web application using **React + Java Servlets**
-* Role-based dashboards for **Users, Shop Admins, and System Admin**
-* Secure authentication with **email-based password recovery (OTP)**
-* REST API communication between frontend and backend
-* Modular backend architecture using **DAO, Models, and Controllers**
-* Structured relational database with **foreign key constraints**
-* Issue reporting system for food or platform related problems
+- Full-stack web application using **React + Java Servlets**
+- Role-based dashboards for **Users, Shop Admins, and System Admin**
+- Secure authentication with **email-based password recovery (OTP)**
+- REST API communication between frontend and backend
+- Modular backend architecture using **DAO, Models, and Controllers**
+- Structured relational database with **foreign key constraints**
+- Issue reporting system for food or platform related problems
+
+---
+
+# 🔐 Demo Credentials
+
+Use the following accounts to explore the system:
+
+👨‍💼 **Admin**
+
+- Email: admin@canteen.com
+- Password: admin123
+
+🏪 **Shop Owner**
+
+- Email: sathya@gmail.com
+- Password: sathya123
+
+👤 **User**
+
+- Email: piranow@gmail.com
+- Password: piranow123
 
 ---
 
@@ -33,39 +60,39 @@ Users interact with the system to browse shops and place food orders.
 
 ### Account Management
 
-* Register and login securely
-* Reset password using OTP sent via email
-* Update personal profile information
-* Change account password
-* Secure logout
+- Register and login securely
+- Reset password using OTP sent via email
+- Update personal profile information
+- Change account password
+- Secure logout
 
 ### Shop & Menu Interaction
 
-* Browse available canteen shops
-* View shop menus and food items
-* View item details and pricing
+- Browse available canteen shops
+- View shop menus and food items
+- View item details and pricing
 
 ### Cart & Ordering
 
-* Add items to cart
-* Modify cart item quantities
-* Remove items from cart
-* Place food orders
-* Complete payment
+- Add items to cart
+- Modify cart item quantities
+- Remove items from cart
+- Place food orders
+- Complete payment
 
 ### Order Management
 
-* Track real-time order status
-* View past order history
-* Cancel orders before preparation begins
+- Track real-time order status
+- View past order history
+- Cancel orders before preparation begins
 
 ### Issue Reporting
 
 Users can report problems related to:
 
-* Food quality
-* Order issues
-* System problems
+- Food quality
+- Order issues
+- System problems
 
 ---
 
@@ -75,25 +102,25 @@ Each shop in the canteen has a **Shop Admin** responsible for managing shop oper
 
 ### Menu Management
 
-* Add new menu items
-* Update menu items
-* Remove menu items
-* Toggle menu item availability
+- Add new menu items
+- Update menu items
+- Remove menu items
+- Toggle menu item availability
 
 ### Shop Management
 
-* Enable or disable shop availability (Open / Closed)
-* Update shop profile details
+- Enable or disable shop availability (Open / Closed)
+- Update shop profile details
 
 ### Order Management
 
-* View incoming orders
-* Monitor order details
-* Update order preparation status
+- View incoming orders
+- Monitor order details
+- Update order preparation status
 
 ### Account Management
 
-* Change shop admin password
+- Change shop admin password
 
 ---
 
@@ -103,24 +130,24 @@ The **Main Admin** manages the entire SmartCanteen platform.
 
 ### Shop Management
 
-* Create new shop owner accounts
-* Register new shops
-* Manage shop administrators
+- Create new shop owner accounts
+- Register new shops
+- Manage shop administrators
 
 ### User Management
 
-* Block or unblock users
-* Block or unblock shop owners
+- Block or unblock users
+- Block or unblock shop owners
 
 ### Platform Monitoring
 
-* View all platform orders
-* Monitor system activity
+- View all platform orders
+- Monitor system activity
 
 ### Report Management
 
-* View user-submitted reports
-* Investigate and manage complaints
+- View user-submitted reports
+- Investigate and manage complaints
 
 ---
 
@@ -148,28 +175,31 @@ This architecture ensures **scalability, modularity, and maintainability** of th
 
 ## Frontend
 
-* React.js
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* Framer Motion
-* React Icons
-* Vite
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Framer Motion
+- React Icons
+- Vite
 
 ## Backend
 
-* Java Servlets
-* REST APIs
-* JDBC
+- Java Servlets
+- REST APIs
+- JDBC
 
 ## Database
 
-* MySQL
+- MySQL
 
-## Tools
+## Tools & Deployment
 
-* Postman (API testing)
-* Git & GitHub (version control)
+- Git & GitHub (Version Control)
+- Postman (API Testing)
+- Render (Backend Hosting)
+- Vercel (Frontend Hosting)
+- Railway (MySQL Database Hosting)
 
 ---
 
@@ -177,14 +207,14 @@ This architecture ensures **scalability, modularity, and maintainability** of th
 
 The system uses a **relational database schema** with the following core tables:
 
-* `users`
-* `shops`
-* `menu`
-* `orders`
-* `order_items`
-* `payments`
-* `reports`
-* `password_resets`
+- `users`
+- `shops`
+- `menu`
+- `orders`
+- `order_items`
+- `payments`
+- `reports`
+- `password_resets`
 
 Relationships between tables are maintained using **foreign keys and constraints** to ensure data integrity and consistent data management.
 
@@ -211,6 +241,16 @@ smart-canteen-system
 │
 └── README.md
 ```
+
+---
+
+# 🔧 Environment Variables (Backend)
+
+The backend uses environment variables for secure configuration:
+
+DB_URL=jdbc:mysql://<host>:<port>/smartcanteen  
+DB_USER=root  
+DB_PASSWORD=your_password
 
 ---
 
@@ -307,10 +347,10 @@ The system administrator manages shops, users, and reports across the platform.
 
 # 🎯 Project Goals
 
-* Simplify campus food ordering
-* Reduce waiting time in canteens
-* Improve shop management efficiency
-* Provide centralized administrative control
+- Simplify campus food ordering
+- Reduce waiting time in canteens
+- Improve shop management efficiency
+- Provide centralized administrative control
 
 ---
 
