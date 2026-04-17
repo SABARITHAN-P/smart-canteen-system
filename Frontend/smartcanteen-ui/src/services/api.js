@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/SmartCanteen/api";
+const BASE_URL = "https://smart-canteen-system-zjuv.onrender.com/api";
 
 /* =========================
    COMMON FETCH FUNCTION
