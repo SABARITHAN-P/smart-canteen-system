@@ -25,30 +25,6 @@ public class AdminShopServlet extends HttpServlet {
 	private ShopService shopService = new ShopService();
 	private Gson gson = new Gson();
 
-	private void setCorsHeaders(HttpServletRequest request, HttpServletResponse response) {
-
-        String origin = request.getHeader("Origin");
-
-        // Allow Vercel + localhost
-        if (origin != null && (
-                origin.contains("vercel.app") ||
-                origin.contains("localhost")
-        )) {
-            response.setHeader("Access-Control-Allow-Origin", origin);
-        }
-
-        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-    }
-
-	public void doOptions(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		setCorsHeaders(response);
-		response.setStatus(HttpServletResponse.SC_OK);
-	}
-
 	/* ========================= SESSION CHECK ========================= */
 
 	private User getSessionUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -88,7 +64,7 @@ public class AdminShopServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		setCorsHeaders(response);
+		
 		response.setContentType("application/json");
 
 		User user = getSessionUser(request, response);
@@ -110,7 +86,7 @@ public class AdminShopServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		setCorsHeaders(response);
+		
 		response.setContentType("application/json");
 
 		User user = getSessionUser(request, response);
@@ -146,7 +122,7 @@ public class AdminShopServlet extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		setCorsHeaders(response);
+		
 		response.setContentType("application/json");
 
 		User user = getSessionUser(request, response);
@@ -205,7 +181,7 @@ public class AdminShopServlet extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		setCorsHeaders(response);
+		
 		response.setContentType("application/json");
 
 		User user = getSessionUser(request, response);

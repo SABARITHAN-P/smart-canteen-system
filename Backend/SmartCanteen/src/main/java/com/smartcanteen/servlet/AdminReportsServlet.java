@@ -23,32 +23,9 @@ public class AdminReportsServlet extends HttpServlet {
 	private ReportService reportService = new ReportService();
 	private Gson gson = new Gson();
 
-	private void setCorsHeaders(HttpServletRequest request, HttpServletResponse response) {
-
-        String origin = request.getHeader("Origin");
-
-        // Allow Vercel + localhost
-        if (origin != null && (
-                origin.contains("vercel.app") ||
-                origin.contains("localhost")
-        )) {
-            response.setHeader("Access-Control-Allow-Origin", origin);
-        }
-
-        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-    }
-
-	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-		setCorsHeaders(response);
-		response.setStatus(HttpServletResponse.SC_OK);
-	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		setCorsHeaders(response);
 		response.setContentType("application/json");
 
 		List<Report> reports = reportService.getAllReports();
@@ -58,7 +35,6 @@ public class AdminReportsServlet extends HttpServlet {
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		setCorsHeaders(response);
 		response.setContentType("application/json");
 
 		BufferedReader reader = request.getReader();
