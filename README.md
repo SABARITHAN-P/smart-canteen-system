@@ -4,6 +4,12 @@
 
 https://smart-canteen-system-phi.vercel.app
 
+⚠️ Note:
+- The frontend loads instantly as it is hosted on Vercel.
+- The backend is hosted on Render (free tier), which may go to sleep after inactivity.
+- First login/request may take around **20–30 seconds** to respond.
+- Subsequent requests will be faster once the server is active.
+
 ---
 
 A **full-stack web application** designed to modernize campus canteen operations by enabling digital food ordering and efficient shop management.
