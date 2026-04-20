@@ -12,6 +12,14 @@ https://smart-canteen-system-phi.vercel.app
 
 ---
 
+## 🧩 Problem Statement
+
+Traditional campus canteens face issues such as long queues, inefficient order handling, and lack of real-time order tracking.
+
+This project aims to digitize and streamline canteen operations through an online ordering and management system.
+
+---
+
 A **full-stack web application** designed to modernize campus canteen operations by enabling digital food ordering and efficient shop management.
 
 The platform allows students to browse canteen shops, explore menus, place food orders, and track order status in real time.
@@ -30,7 +38,7 @@ The system follows a **role-based architecture** with three primary roles:
 - Full-stack web application using **React + Java Servlets**
 - Role-based dashboards for **Users, Shop Admins, and System Admin**
 - Secure authentication with **email-based password recovery (OTP)**
-- REST API communication between frontend and backend
+- Designed RESTful APIs for authentication, order management, and admin operations
 - Modular backend architecture using **DAO, Models, and Controllers**
 - Structured relational database with **foreign key constraints**
 - Issue reporting system for food or platform related problems
@@ -56,6 +64,7 @@ Use the following accounts to explore the system:
 - Email: piranow@gmail.com
 - Password: piranow123
 
+⚠️ These credentials are for demo purposes only.
 ---
 
 # 🚀 Features
@@ -363,6 +372,4 @@ The system administrator manages shops, users, and reports across the platform.
 # 👨‍💻 Author
 
 **Sabarithan P**
-
-Computer Science Engineering Undergraduate
-Full-Stack Development Enthusiast
+Aspiring Software Engineer | Full-Stack Developer
