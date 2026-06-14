@@ -52,7 +52,7 @@ function Reports() {
       <h2 style={styles.title}>📋 User Reports</h2>
 
       {/* FILTER BUTTONS */}
-      <div style={styles.filters}>
+      <div style={{ ...styles.filters, flexWrap: "wrap" }}>
         <button onClick={() => setFilter("all")} style={styles.filterBtn}>
           All
         </button>
@@ -73,73 +73,75 @@ function Reports() {
       {filteredReports.length === 0 ? (
         <p>No reports available</p>
       ) : (
-        <table style={styles.table}>
-          <thead>
-            <tr>
-              <th style={styles.th}>Report ID</th>
-              <th style={styles.th}>User ID</th>
-              <th style={styles.th}>Order ID</th>
-              <th style={styles.th}>Category</th>
-              <th style={styles.th}>Issue</th>
-              <th style={styles.th}>Description</th>
-              <th style={styles.th}>Status</th>
-              <th style={styles.th}>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {filteredReports.map((report) => (
-              <tr key={report.reportId} style={styles.row}>
-                <td style={styles.td}>{report.reportId}</td>
-                <td style={styles.td}>{report.userId}</td>
-                <td style={styles.td}>{report.orderId || "-"}</td>
-
-                <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
-                  {report.issueCategory}
-                </td>
-
-                <td style={styles.td}>{report.issueType}</td>
-
-                <td style={styles.td}>{report.description}</td>
-
-                <td style={styles.td}>
-                  <span
-                    style={{
-                      ...styles.statusBadge,
-                      ...getStatusStyle(report.status),
-                    }}
-                  >
-                    {report.status}
-                  </span>
-                </td>
-
-                <td style={styles.td}>
-                  {report.status === "pending" && (
-                    <div style={styles.actions}>
-                      <button
-                        style={styles.resolveBtn}
-                        onClick={() =>
-                          handleStatusUpdate(report.reportId, "resolved")
-                        }
-                      >
-                        Resolve
-                      </button>
-
-                      <button
-                        style={styles.rejectBtn}
-                        onClick={() =>
-                          handleStatusUpdate(report.reportId, "rejected")
-                        }
-                      >
-                        Reject
-                      </button>
-                    </div>
-                  )}
-                </td>
+        <div className="table-wrapper">
+          <table style={styles.table}>
+            <thead>
+              <tr>
+                <th style={styles.th}>Report ID</th>
+                <th style={styles.th}>User ID</th>
+                <th style={styles.th}>Order ID</th>
+                <th style={styles.th}>Category</th>
+                <th style={styles.th}>Issue</th>
+                <th style={styles.th}>Description</th>
+                <th style={styles.th}>Status</th>
+                <th style={styles.th}>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {filteredReports.map((report) => (
+                <tr key={report.reportId} style={styles.row}>
+                  <td style={styles.td}>{report.reportId}</td>
+                  <td style={styles.td}>{report.userId}</td>
+                  <td style={styles.td}>{report.orderId || "-"}</td>
+
+                  <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
+                    {report.issueCategory}
+                  </td>
+
+                  <td style={styles.td}>{report.issueType}</td>
+
+                  <td style={styles.td}>{report.description}</td>
+
+                  <td style={styles.td}>
+                    <span
+                      style={{
+                        ...styles.statusBadge,
+                        ...getStatusStyle(report.status),
+                      }}
+                    >
+                      {report.status}
+                    </span>
+                  </td>
+
+                  <td style={styles.td}>
+                    {report.status === "pending" && (
+                      <div style={styles.actions}>
+                        <button
+                          style={styles.resolveBtn}
+                          onClick={() =>
+                            handleStatusUpdate(report.reportId, "resolved")
+                          }
+                        >
+                          Resolve
+                        </button>
+
+                        <button
+                          style={styles.rejectBtn}
+                          onClick={() =>
+                            handleStatusUpdate(report.reportId, "rejected")
+                          }
+                        >
+                          Reject
+                        </button>
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       <button

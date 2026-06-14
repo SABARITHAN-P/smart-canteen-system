@@ -357,6 +357,7 @@ const styles = {
 
   tabs: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "12px",
     marginBottom: "25px",
   },
@@ -429,6 +430,7 @@ const styles = {
 
   actions: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
   },
 

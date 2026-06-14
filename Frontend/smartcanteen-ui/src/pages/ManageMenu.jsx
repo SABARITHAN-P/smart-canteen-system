@@ -235,56 +235,58 @@ function ManageMenu() {
       <div style={styles.card}>
         <h3>Menu Items</h3>
 
-        <table style={styles.table}>
-          <thead>
-            <tr>
-              <th style={styles.th}>Item</th>
-              <th style={styles.th}>Price</th>
-              <th style={styles.th}>Category</th>
-              <th style={styles.th}>Status</th>
-              <th style={styles.th}>Actions</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {menus.map((menu) => (
-              <tr key={menu.menuId}>
-                <td style={styles.td}>{menu.itemName}</td>
-                <td style={styles.td}>₹{menu.price}</td>
-                <td style={styles.td}>{menu.category}</td>
-
-                <td style={styles.td}>
-                  {menu.availabilityStatus === "AVAILABLE"
-                    ? "🟢 Available"
-                    : "🔴 Unavailable"}
-                </td>
-
-                <td style={{ ...styles.td, ...styles.actionsCell }}>
-                  <button
-                    style={styles.editBtn}
-                    onClick={() => handleEdit(menu)}
-                  >
-                    Edit
-                  </button>
-
-                  <button
-                    style={styles.deleteBtn}
-                    onClick={() => handleDelete(menu.menuId)}
-                  >
-                    Delete
-                  </button>
-
-                  <button
-                    style={styles.toggleBtn}
-                    onClick={() => toggleStatus(menu)}
-                  >
-                    Toggle
-                  </button>
-                </td>
+        <div className="table-wrapper">
+          <table style={styles.table}>
+            <thead>
+              <tr>
+                <th style={styles.th}>Item</th>
+                <th style={styles.th}>Price</th>
+                <th style={styles.th}>Category</th>
+                <th style={styles.th}>Status</th>
+                <th style={styles.th}>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {menus.map((menu) => (
+                <tr key={menu.menuId}>
+                  <td style={styles.td}>{menu.itemName}</td>
+                  <td style={styles.td}>₹{menu.price}</td>
+                  <td style={styles.td}>{menu.category}</td>
+
+                  <td style={styles.td}>
+                    {menu.availabilityStatus === "AVAILABLE"
+                      ? "🟢 Available"
+                      : "🔴 Unavailable"}
+                  </td>
+
+                  <td style={{ ...styles.td, ...styles.actionsCell }}>
+                    <button
+                      style={styles.editBtn}
+                      onClick={() => handleEdit(menu)}
+                    >
+                      Edit
+                    </button>
+
+                    <button
+                      style={styles.deleteBtn}
+                      onClick={() => handleDelete(menu.menuId)}
+                    >
+                      Delete
+                    </button>
+
+                    <button
+                      style={styles.toggleBtn}
+                      onClick={() => toggleStatus(menu)}
+                    >
+                      Toggle
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </AppLayout>
   );

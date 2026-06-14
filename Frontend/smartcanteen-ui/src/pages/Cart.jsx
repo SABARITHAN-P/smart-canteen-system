@@ -134,6 +134,7 @@ const styles = {
 
   buttons: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "14px",
   },
 

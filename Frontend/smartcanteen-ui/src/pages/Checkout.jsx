@@ -107,9 +107,11 @@ function Checkout() {
 
 const styles = {
   container: {
-    padding: "40px",
+    padding: "clamp(15px, 5vw, 40px)",
     maxWidth: "750px",
     margin: "auto",
+    width: "100%",
+    boxSizing: "border-box",
   },
 
   heading: {
@@ -161,6 +163,7 @@ const styles = {
   buttons: {
     marginTop: "28px",
     display: "flex",
+    flexWrap: "wrap",
     gap: "12px",
   },
 
@@ -172,6 +175,8 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
+    flex: "1 1 150px",
+    textAlign: "center",
   },
 
   backBtn: {
@@ -180,6 +185,8 @@ const styles = {
     padding: "12px 20px",
     borderRadius: "8px",
     cursor: "pointer",
+    flex: "1 1 150px",
+    textAlign: "center",
   },
 };
 

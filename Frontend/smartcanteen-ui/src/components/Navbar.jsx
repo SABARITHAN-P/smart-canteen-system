@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const user = JSON.parse(sessionStorage.getItem("currentUser") || "{}");
   const location = useLocation();
 
@@ -16,7 +19,7 @@ function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   const navItem = (to, label) => (
-    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
+    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }} onClick={() => setMenuOpen(false)}>
       <Link to={to} className={`nav-link ${isActive(to) ? "active" : ""}`}>
         {label}
       </Link>
@@ -30,11 +33,16 @@ function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <motion.h2 className="logo" whileHover={{ scale: 1.05 }}>
+      <motion.h2 className="logo" whileHover={{ scale: 1.05 }} onClick={() => setMenuOpen(false)}>
         🍔 QuickBite
       </motion.h2>
 
-      <div className="links">
+      {/* Hamburger Toggle Button */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      <div className={`links ${menuOpen ? "open" : ""}`}>
         {navItem(getHomeRoute(), "Home")}
 
         {user.role === "USER" && (

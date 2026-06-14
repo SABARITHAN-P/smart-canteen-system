@@ -22,18 +22,23 @@ const styles = {
 
   contentWrapper: {
     paddingTop: "90px", // prevents navbar overlap
-    paddingBottom: "40px",
-    paddingLeft: "20px",
-    paddingRight: "20px",
+    paddingBottom: "clamp(20px, 5vw, 40px)",
+    paddingLeft: "clamp(10px, 3vw, 20px)",
+    paddingRight: "clamp(10px, 3vw, 20px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 
   container: {
+    width: "100%",
     maxWidth: "1100px",
     margin: "auto",
     background: "white",
-    padding: "40px",
+    padding: "clamp(15px, 5vw, 40px)",
     borderRadius: "20px",
     boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+    boxSizing: "border-box",
   },
 };
 

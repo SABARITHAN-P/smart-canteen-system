@@ -230,15 +230,16 @@ const styles = {
   },
 
   container: {
-    width: "100%",
+    width: "calc(100% - 30px)",
     maxWidth: "500px",
   },
 
   card: {
     background: "white",
-    padding: "35px",
+    padding: "clamp(15px, 5vw, 35px)",
     borderRadius: "12px",
     boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+    boxSizing: "border-box",
   },
 
   title: {
@@ -290,16 +291,19 @@ const styles = {
     borderRadius: "6px",
     border: "1px solid #ddd",
     marginTop: "5px",
+    flex: "1 1 120px",
   },
 
   row: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
     marginBottom: "15px",
   },
 
   walletGrid: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
     marginBottom: "15px",
   },

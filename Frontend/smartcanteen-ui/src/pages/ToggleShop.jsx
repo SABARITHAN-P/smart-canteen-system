@@ -105,12 +105,13 @@ const styles = {
 
   card: {
     background: "#f8fafc",
-    padding: "40px",
+    padding: "clamp(20px, 5vw, 40px)",
     borderRadius: "20px",
     boxShadow: "0 18px 40px rgba(0,0,0,0.08)",
     textAlign: "center",
     maxWidth: "420px",
     margin: "auto",
+    boxSizing: "border-box",
   },
 
   statusRow: {

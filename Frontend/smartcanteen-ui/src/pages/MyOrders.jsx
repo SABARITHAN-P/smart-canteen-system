@@ -153,6 +153,8 @@ const styles = {
 
   topRow: {
     display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: "8px",

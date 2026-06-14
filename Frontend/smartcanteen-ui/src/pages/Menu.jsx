@@ -209,6 +209,7 @@ const styles = {
   filterBox: {
     marginBottom: "30px",
     display: "flex",
+    flexWrap: "wrap",
     alignItems: "center",
     gap: "12px",
   },
@@ -263,6 +264,10 @@ const styles = {
     padding: "14px 22px",
     borderRadius: "14px",
     display: "flex",
+    width: "calc(100% - 40px)",
+    maxWidth: "450px",
+    boxSizing: "border-box",
+    justifyContent: "space-between",
     gap: "18px",
     alignItems: "center",
     boxShadow: "0 10px 30px rgba(0,0,0,0.25)",

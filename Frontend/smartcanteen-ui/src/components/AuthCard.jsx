@@ -15,11 +15,13 @@ function AuthCard({ children, width = "380px" }) {
 
 const styles = {
   card: {
-    padding: "35px",
+    padding: "clamp(18px, 5vw, 35px)",
     background: "white",
     borderRadius: "16px",
     boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
     textAlign: "center",
+    maxWidth: "calc(100% - 24px)",
+    boxSizing: "border-box",
   },
 };
 

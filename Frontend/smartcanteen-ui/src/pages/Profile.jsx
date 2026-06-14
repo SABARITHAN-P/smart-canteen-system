@@ -252,6 +252,7 @@ function Profile() {
 const styles = {
   buttonRow: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
     marginBottom: "20px",
   },

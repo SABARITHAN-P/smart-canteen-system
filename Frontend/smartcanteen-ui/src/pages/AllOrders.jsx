@@ -248,6 +248,8 @@ const styles = {
 
   orderRow: {
     display: "flex",
+    flexWrap: "wrap",
+    gap: "5px",
     justifyContent: "space-between",
     marginBottom: "5px",
   },

@@ -282,6 +282,7 @@ const styles = {
 
   tabs: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "12px",
     marginBottom: "25px",
   },

@@ -146,11 +146,12 @@ const styles = {
 
   card: {
     background: "#f8fafc",
-    padding: "35px",
+    padding: "clamp(20px, 5vw, 35px)",
     borderRadius: "20px",
     boxShadow: "0 18px 40px rgba(0,0,0,0.08)",
     maxWidth: "420px",
     margin: "auto",
+    boxSizing: "border-box",
   },
 
   row: {
@@ -170,12 +171,13 @@ const styles = {
 
   form: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
     marginTop: "10px",
   },
 
   input: {
-    flex: 1,
+    flex: "1 1 200px",
     padding: "12px",
     borderRadius: "10px",
     border: "1px solid #cbd5f5",
@@ -189,6 +191,8 @@ const styles = {
     borderRadius: "10px",
     cursor: "pointer",
     fontWeight: "600",
+    flex: "1 1 100px",
+    textAlign: "center",
   },
 
   message: {

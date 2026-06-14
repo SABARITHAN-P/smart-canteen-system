@@ -58,3 +58,18 @@
   font-size: 13px;
   font-weight: 600;
 }
+
+@media (max-width: 400px) {
+  .food-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .add-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

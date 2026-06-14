@@ -158,6 +158,8 @@ const styles = {
     borderRadius: "18px",
     marginBottom: "16px",
     display: "flex",
+    flexWrap: "wrap",
+    gap: "15px",
     justifyContent: "space-between",
     alignItems: "center",
     boxShadow: "0 15px 35px rgba(0,0,0,0.08)",
@@ -166,6 +168,7 @@ const styles = {
   left: {
     display: "flex",
     flexDirection: "column",
+    minWidth: "200px",
   },
 
   token: {
@@ -196,6 +199,7 @@ const styles = {
 
   buttons: {
     display: "flex",
+    flexWrap: "wrap",
     gap: "10px",
   },
 
