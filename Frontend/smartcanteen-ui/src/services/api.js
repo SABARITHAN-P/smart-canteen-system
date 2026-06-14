@@ -1,4 +1,4 @@
-const BASE_URL = "https://smart-canteen-system-zjuv.onrender.com/api";
+const BASE_URL = "/api";
 
 /* =========================
    COMMON FETCH FUNCTION

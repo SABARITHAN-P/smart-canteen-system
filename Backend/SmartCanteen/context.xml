@@ -10,5 +10,6 @@
     <!-- Detect HTTPS proxy/load balancer termination to dynamically set secure cookies -->
     <Valve className="org.apache.catalina.valves.RemoteIpValve"
            remoteIpHeader="x-forwarded-for"
-           protocolHeader="x-forwarded-proto" />
+           protocolHeader="x-forwarded-proto"
+           internalProxies=".*" />
 </Context>
