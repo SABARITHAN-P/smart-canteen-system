@@ -19,7 +19,10 @@ function Reports() {
   }, []);
 
   useEffect(() => {
-    fetchReports();
+    const loadReports = async () => {
+      await fetchReports();
+    };
+    loadReports();
   }, [fetchReports]);
 
   const handleStatusUpdate = async (reportId, status) => {

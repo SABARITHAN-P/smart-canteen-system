@@ -40,7 +40,10 @@ function ManageMenu() {
   }, [shopId]);
 
   useEffect(() => {
-    fetchMenu();
+    const loadMenu = async () => {
+      await fetchMenu();
+    };
+    loadMenu();
   }, [fetchMenu]);
 
   const handleChange = (e) => {
