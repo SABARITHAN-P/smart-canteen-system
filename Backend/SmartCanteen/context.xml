@@ -6,4 +6,9 @@
 
     <!-- Configure SameSite=None for cross-site cookie session handling on mobile/web browsers -->
     <CookieProcessor sameSiteCookies="none" />
+
+    <!-- Detect HTTPS proxy/load balancer termination to dynamically set secure cookies -->
+    <Valve className="org.apache.catalina.valves.RemoteIpValve"
+           remoteIpHeader="x-forwarded-for"
+           protocolHeader="x-forwarded-proto" />
 </Context>
