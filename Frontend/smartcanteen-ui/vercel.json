@@ -1,9 +1,12 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/api/:path*",
+      "destination": "https://smart-canteen-system-zjuv.onrender.com/api/:path*"
+    },
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
     }
   ]
 }
