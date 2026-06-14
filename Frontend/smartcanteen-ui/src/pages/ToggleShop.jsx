@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { getShop, toggleShop } from "../services/api";
 import AppLayout from "../components/AppLayout";
@@ -10,20 +11,18 @@ function ToggleShop() {
   const [shop, setShop] = useState(null);
   const [message, setMessage] = useState("");
 
-  const fetchShop = async () => {
+  const fetchShop = useCallback(async () => {
     try {
       const data = await getShop(adminId);
       setShop(data);
     } catch (error) {
       console.error("Failed to fetch Shop", error);
     }
-  };
-  useEffect(() => {
-    const loadShop = async () => {
-      await fetchShop();
-    };
-    loadShop();
   }, [adminId]);
+
+  useEffect(() => {
+    fetchShop();
+  }, [fetchShop]);
 
   const handleToggle = async () => {
     try {

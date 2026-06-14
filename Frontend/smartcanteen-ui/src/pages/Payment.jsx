@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";

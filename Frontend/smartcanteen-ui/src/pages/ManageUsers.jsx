@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getAllUsers, blockUser, unblockUser } from "../services/api";
 import { useNavigate } from "react-router-dom";

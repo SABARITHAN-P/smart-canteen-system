@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllReports, updateReportStatus } from "../services/api";
 import Swal from "sweetalert2";
@@ -9,18 +9,18 @@ function Reports() {
   const [reports, setReports] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-    fetchReports();
-  }, []);
-
-  const fetchReports = async () => {
+  const fetchReports = useCallback(async () => {
     try {
       const data = await getAllReports();
       setReports(data);
     } catch (error) {
       console.error("Error fetching reports:", error);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchReports();
+  }, [fetchReports]);
 
   const handleStatusUpdate = async (reportId, status) => {
     try {

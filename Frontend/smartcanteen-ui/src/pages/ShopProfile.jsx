@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { getShop, updateShop } from "../services/api";
 import AppLayout from "../components/AppLayout";
@@ -12,7 +13,7 @@ function ShopProfile() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const fetchShop = async () => {
+  const fetchShop = useCallback(async () => {
     try {
       if (!adminId) return;
 
@@ -23,11 +24,11 @@ function ShopProfile() {
     } catch (error) {
       console.error("Failed to fetch shop", error);
     }
-  };
+  }, [adminId]);
 
   useEffect(() => {
     fetchShop();
-  }, [adminId]);
+  }, [fetchShop]);
 
   const handleUpdate = async (e) => {
     e.preventDefault();

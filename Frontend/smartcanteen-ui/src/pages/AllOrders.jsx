@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { getAllOrders } from "../services/api";
 import AppLayout from "../components/AppLayout";
@@ -8,18 +9,18 @@ function AllOrders() {
   const [filter, setFilter] = useState("TODAY");
   const [customDate, setCustomDate] = useState("");
 
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     try {
       const data = await getAllOrders();
       setOrders(data);
     } catch (error) {
       console.error("Failed to fetch orders", error);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, [fetchOrders]);
 
   const formatDateTime = (dateTime) => {
     const date = new Date(dateTime);

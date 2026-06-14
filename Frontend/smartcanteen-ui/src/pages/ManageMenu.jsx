@@ -1,7 +1,8 @@
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { getMenu, addMenu, updateMenu, deleteMenu } from "../services/api";
 import AppLayout from "../components/AppLayout";
 
@@ -28,7 +29,7 @@ function ManageMenu() {
   const statusRef = useRef(null);
   const submitRef = useRef(null);
 
-  const fetchMenu = async () => {
+  const fetchMenu = useCallback(async () => {
     try {
       if (!shopId) return;
       const data = await getMenu(shopId);
@@ -36,11 +37,11 @@ function ManageMenu() {
     } catch (error) {
       console.error("Failed to fetch menu", error);
     }
-  };
+  }, [shopId]);
 
   useEffect(() => {
     fetchMenu();
-  }, [shopId]);
+  }, [fetchMenu]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

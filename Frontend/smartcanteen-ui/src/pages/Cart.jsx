@@ -1,4 +1,5 @@
 import { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { getCart, clearCart } from "../services/cart";
 import { useNavigate } from "react-router-dom";

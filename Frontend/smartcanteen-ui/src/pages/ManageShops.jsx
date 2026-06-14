@@ -1,7 +1,6 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
-import { motion } from "framer-motion";
 import { useEffect, useState} from "react";
 import {
   getAllShops,

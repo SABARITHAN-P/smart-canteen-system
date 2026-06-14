@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { getOrdersByShop, updateOrderStatus } from "../services/api";
 import AppLayout from "../components/AppLayout";
@@ -9,7 +10,7 @@ function ShopOrders() {
   const user = JSON.parse(sessionStorage.getItem("currentUser") || "{}");
   const shopId = user.shopId;
 
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     if (!shopId) return;
 
     try {
@@ -18,7 +19,7 @@ function ShopOrders() {
     } catch (error) {
       console.error("Failed to fetch orders", error);
     }
-  };
+  }, [shopId]);
 
   useEffect(() => {
     fetchOrders();
@@ -28,7 +29,7 @@ function ShopOrders() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [shopId]);
+  }, [fetchOrders]);
 
   const changeStatus = async (orderId, status) => {
     try {
