@@ -224,7 +224,6 @@ p{
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 8px;
