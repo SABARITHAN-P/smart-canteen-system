@@ -7,7 +7,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import ReportIssue from "./pages/Profile";
+import ReportIssue from "./pages/ReportIssue";
 
 import UserDashboard from "./pages/UserDashboard";
 import ShopAdminDashboard from "./pages/ShopAdminDashboard";
