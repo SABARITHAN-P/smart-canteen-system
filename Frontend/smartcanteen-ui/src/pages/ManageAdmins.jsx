@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
   getShopAdmins,
