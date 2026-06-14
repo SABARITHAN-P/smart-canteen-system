@@ -179,7 +179,7 @@ Java Servlets Backend
       │
       │ JDBC
       ▼
-MySQL Database
+PostgreSQL Database
 ```
 
 This architecture ensures **scalability, modularity, and maintainability** of the system.
@@ -206,7 +206,7 @@ This architecture ensures **scalability, modularity, and maintainability** of th
 
 ## Database
 
-- MySQL
+- PostgreSQL
 
 ## Tools & Deployment
 
@@ -214,7 +214,7 @@ This architecture ensures **scalability, modularity, and maintainability** of th
 - Postman (API Testing)
 - Render (Backend Hosting)
 - Vercel (Frontend Hosting)
-- Railway (MySQL Database Hosting)
+- Neon (PostgreSQL Database Hosting)
 
 ---
 
@@ -247,7 +247,7 @@ smart-canteen-system
 │   └── smartcanteen/           # Java Servlets backend
 │
 ├── database/
-│   └── schema.sql              # MySQL database schema
+│   └── smartcanteen_schema_postgres.sql # PostgreSQL database schema
 │
 ├── screenshots/
 │   ├── user/
@@ -263,8 +263,8 @@ smart-canteen-system
 
 The backend uses environment variables for secure configuration:
 
-DB_URL=jdbc:mysql://<host>:<port>/smartcanteen  
-DB_USER=root  
+DB_URL=jdbc:postgresql://<host>:<port>/neondb  
+DB_USER=neondb_owner  
 DB_PASSWORD=your_password
 
 ---
@@ -281,10 +281,10 @@ git clone https://github.com/YOUR_USERNAME/smart-canteen-system.git
 
 ## 2️⃣ Setup Database
 
-Create a MySQL database and import the schema:
+Create a PostgreSQL database and import the schema:
 
 ```
-source database/schema.sql;
+psql -h <host> -U <user> -d neondb -f database/smartcanteen_schema_postgres.sql
 ```
 
 ---

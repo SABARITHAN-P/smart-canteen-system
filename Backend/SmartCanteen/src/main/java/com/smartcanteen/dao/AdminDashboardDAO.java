@@ -15,7 +15,7 @@ public class AdminDashboardDAO {
 
 			// Orders Today
 			String ordersSql = "SELECT COUNT(*) FROM orders " + "WHERE shop_id=? "
-					+ "AND DATE(order_time) = CURRENT_DATE " + "AND status != 'CANCELLED'";
+					+ "AND CAST(order_time AS date) = CURRENT_DATE " + "AND status != 'CANCELLED'";
 
 			PreparedStatement ps1 = con.prepareStatement(ordersSql);
 			ps1.setInt(1, shopId);
@@ -25,9 +25,9 @@ public class AdminDashboardDAO {
 			stats.put("ordersToday", rs1.getInt(1));
 
 			// Revenue Today
-			String revenueSql = "SELECT IFNULL(SUM(oi.price_at_order * oi.quantity),0) " + "FROM orders o "
+			String revenueSql = "SELECT COALESCE(SUM(oi.price_at_order * oi.quantity),0) " + "FROM orders o "
 					+ "JOIN order_items oi ON o.order_id = oi.order_id " + "WHERE o.shop_id=? "
-					+ "AND DATE(o.order_time) = CURRENT_DATE " + "AND o.status != 'CANCELLED'";
+					+ "AND CAST(o.order_time AS date) = CURRENT_DATE " + "AND o.status != 'CANCELLED'";
 
 			PreparedStatement ps2 = con.prepareStatement(revenueSql);
 			ps2.setInt(1, shopId);
@@ -38,7 +38,7 @@ public class AdminDashboardDAO {
 
 			// Active Orders
 			String activeSql = "SELECT COUNT(*) FROM orders " + "WHERE shop_id=? "
-					+ "AND DATE(order_time) = CURRENT_DATE " + "AND status IN ('PENDING','PREPARING')";
+					+ "AND CAST(order_time AS date) = CURRENT_DATE " + "AND status IN ('PENDING','PREPARING')";
 
 			PreparedStatement ps3 = con.prepareStatement(activeSql);
 			ps3.setInt(1, shopId);

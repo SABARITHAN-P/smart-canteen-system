@@ -13,7 +13,7 @@ The backend is responsible for:
 - Performing database operations
 - Returning structured API responses
 
-This backend acts as the **central layer connecting the React frontend and the MySQL database**.
+This backend acts as the **central layer connecting the React frontend and the PostgreSQL database**.
 
 ---
 
@@ -22,8 +22,8 @@ This backend acts as the **central layer connecting the React frontend and the M
 The backend is implemented using the following technologies:
 
 - **Java Servlets** – Handles HTTP requests and responses
-- **JDBC (Java Database Connectivity)** – Communicates with the MySQL database
-- **MySQL** – Stores application data such as users, menu items, and orders
+- **JDBC (Java Database Connectivity)** – Communicates with the PostgreSQL database
+- **PostgreSQL** – Stores application data such as users, menu items, and orders
 - **Apache Tomcat** – Application server used to deploy and run the backend
 - **REST APIs** – Enables communication between frontend and backend
 
@@ -90,7 +90,7 @@ Responsibilities include:
 
 ### DAO (Data Access Objects)
 
-DAO classes interact directly with the MySQL database using JDBC.
+DAO classes interact directly with the PostgreSQL database using JDBC.
 
 Responsibilities include:
 
@@ -123,7 +123,7 @@ Utility classes provide reusable functionality used across the backend.
 
 Example:
 
-`DBConnection.java` is responsible for establishing and managing connections to the MySQL database.
+`DBConnection.java` is responsible for establishing and managing connections to the PostgreSQL database.
 
 ---
 
@@ -141,12 +141,12 @@ This file contains SQL statements required to create all necessary database tabl
 
 ### Steps to Initialize the Database
 
-1. Open **MySQL Workbench** or another MySQL client.
+1. Open your PostgreSQL client (such as `psql` or pgAdmin).
 
 2. Create the database:
 
 ```
-CREATE DATABASE smartcanteen;
+CREATE DATABASE neondb;
 ```
 
 3. Import the schema file:
@@ -173,10 +173,10 @@ Open the backend folder in an IDE such as:
 
 ### 2. Configure Database Credentials
 
-Locate the database connection utility file:
+Locate the environment configuration file:
 
 ```
-utils/DBConnection.java
+.env
 ```
 
 Update the database configuration if necessary.
@@ -184,9 +184,9 @@ Update the database configuration if necessary.
 Example configuration:
 
 ```
-jdbc:mysql://localhost:3306/smartcanteen
-username: root
-password: your_password
+DB_URL=jdbc:postgresql://ep-super-bar-aofkdxkv.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+DB_USER=neondb_owner
+DB_PASSWORD=your_password
 ```
 
 ---
@@ -298,7 +298,7 @@ Java Backend (Servlet APIs)
         │
         │ JDBC Queries
         ▼
-MySQL Database
+PostgreSQL Database
 ```
 
 The frontend sends requests to backend APIs.
@@ -308,6 +308,6 @@ The backend processes those requests, interacts with the database, and returns t
 
 ## Notes
 
-- Ensure MySQL is running before starting the backend server.
+- Ensure PostgreSQL is running (or cloud connection is active) before starting the backend server.
 - Make sure the database schema has been imported successfully.
 - The backend must be running before starting the frontend application.
