@@ -1,0 +1,14 @@
+# Sensitive Files
+.env
+Backend/SmartCanteen/.env
+
+# Eclipse / IDE metadata
+.metadata/
+.project
+.classpath
+.settings/
+Backend/SmartCanteen/.metadata/
+Backend/SmartCanteen/.project
+Backend/SmartCanteen/.classpath
+Backend/SmartCanteen/build/
+bin/
