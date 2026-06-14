@@ -19,7 +19,10 @@ function AllOrders() {
   }, []);
 
   useEffect(() => {
-    fetchOrders();
+    const loadOrders = async () => {
+      await fetchOrders();
+    };
+    loadOrders();
   }, [fetchOrders]);
 
   const formatDateTime = (dateTime) => {

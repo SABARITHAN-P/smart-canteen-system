@@ -22,10 +22,13 @@ function ShopOrders() {
   }, [shopId]);
 
   useEffect(() => {
-    fetchOrders();
+    const loadOrders = async () => {
+      await fetchOrders();
+    };
+    loadOrders();
 
     const interval = setInterval(() => {
-      fetchOrders();
+      loadOrders();
     }, 5000);
 
     return () => clearInterval(interval);

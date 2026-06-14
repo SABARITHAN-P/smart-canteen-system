@@ -21,7 +21,10 @@ function ToggleShop() {
   }, [adminId]);
 
   useEffect(() => {
-    fetchShop();
+    const loadShop = async () => {
+      await fetchShop();
+    };
+    loadShop();
   }, [fetchShop]);
 
   const handleToggle = async () => {
