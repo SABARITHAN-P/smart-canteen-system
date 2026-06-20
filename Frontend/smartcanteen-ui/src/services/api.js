@@ -14,6 +14,12 @@ async function apiFetch(url, options = {}) {
     ...options,
   });
 
+  if (response.status === 401) {
+    sessionStorage.removeItem("currentUser");
+    window.location.href = "/login";
+    throw new Error("Session expired. Please login again.");
+  }
+
   if (!response.ok) {
     throw new Error(`Request failed: ${response.status}`);
   }
