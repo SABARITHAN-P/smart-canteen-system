@@ -16,7 +16,14 @@ public class OrderDAO {
 
 	public int getNextTokenNumber(Connection con, int shopId) throws SQLException {
 
-		String sql = "SELECT MAX(token_number) AS max_token FROM orders WHERE shop_id = ? AND order_date = CURRENT_DATE FOR UPDATE";
+		// Lock the shop row to serialize token number generation for this shop
+		String lockSql = "SELECT shop_id FROM shops WHERE shop_id = ? FOR UPDATE";
+		try (PreparedStatement psLock = con.prepareStatement(lockSql)) {
+			psLock.setInt(1, shopId);
+			psLock.executeQuery().close();
+		}
+
+		String sql = "SELECT MAX(token_number) AS max_token FROM orders WHERE shop_id = ? AND order_date = CURRENT_DATE";
 
 		try (PreparedStatement ps = con.prepareStatement(sql)) {
 
